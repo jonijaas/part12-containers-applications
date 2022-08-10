@@ -1,0 +1,68 @@
+Script started on 2022-08-10 15:44:36+03:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="211" LINES="50"]
+]0;jonijaas@DESKTOP-OK8AK7L: /mnt/c/FullStack/part12-containers-applications/todo-app/todo-backend[01;32mjonijaas@DESKTOP-OK8AK7L[00m:[01;34m/mnt/c/FullStack/part12-containers-applications/todo-app/todo-backend[00m$ docker container ls
+CONTAINER ID   IMAGE     COMMAND                  CREATED              STATUS              PORTS                     NAMES
+ae3bcfd82ac0   mongo     "docker-entrypoint.s…"   About a minute ago   Up About a minute   0.0.0.0:3456->27017/tcp   todo-backend_mongo_1
+]0;jonijaas@DESKTOP-OK8AK7L: /mnt/c/FullStack/part12-containers-applications/todo-app/todo-backend[01;32mjonijaas@DESKTOP-OK8AK7L[00m:[01;34m/mnt/c/FullStack/part12-containers-applications/todo-app/todo-backend[00m$ docker exec -it todo-backend:[KM[K_mongo_1 bash
+root@ae3bcfd82ac0:/# mongo -u root -p example
+MongoDB shell version v5.0.10
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("db55831f-59e9-46ca-8eed-e3b0abf8d97d") }
+MongoDB server version: 5.0.10
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+Welcome to the MongoDB shell.
+For interactive help, type "help".
+For more comprehensive documentation, see
+	https://docs.mongodb.com/
+Questions? Try the MongoDB Developer Community Forums
+	https://community.mongodb.com
+---
+The server generated these startup warnings when booting: 
+        2022-08-10T12:43:45.634+00:00: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem
+        2022-08-10T12:43:46.783+00:00: /sys/kernel/mm/transparent_hugepage/enabled is 'always'. We suggest setting it to 'never'
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> show dbs[3G[Jshow dbs[11G
+admin         0.000GB
+config        0.000GB
+local         0.000GB
+the_database  0.000GB
+> use the_database[3G[Juse the_database[19G
+switched to db the_database
+> show collections[3G[Jshow collections[19G
+todos
+> db.todos.find({})[3G[Jdb.todos.find({})[20G
+{ "_id" : ObjectId("62f391499f9636911c550fa6"), "text" : "Write code......", "done" : true }
+{ "_id" : ObjectId("62f391499f9636911c550fa7"), "text" : "Learn about containers", "done" : false }
+> db.todos.insertOne({"text": "In[3G[Jdb.todos.insertOne({"text": "In[33G[3G[Jdb.todos.insertOne({"text": "In[32G[3G[Jdb.todos.insertOne({"text": "In[31G[3G[Jdb.todos.insertOne({"text":"In[30G[3G[Jdb.todos.insertOne({"text":"In[31G[3G[Jdb.todos.insertOne({"text":"In[32G[3G[Jdb.todos.insertOne({"text":"In[33Gcrease the number of tools in my toolbelt" [3G[Jdb.todos.insertOne({"text":"Increase the number of tools in my toolbelt" [75G[3G[Jdb.todos.insertOne({"text":"Increase the number of tools in my toolbelt", [76G[3G[Jdb.todos.insertOne({"text":"Increase the number of tools in my toolbelt",  [77G[3G[Jdb.todos.insertOne({"text":"Increase the number of tools in my toolbelt", " [78G[3G[Jdb.todos.insertOne({"text":"Increase the number of tools in my toolbelt", "d [79G[3G[Jdb.todos.insertOne({"text":"Increase the number of tools in my toolbelt", "do [80G[3G[Jdb.todos.insertOne({"text":"Increase the number of tools in my toolbelt", "don [81G[3G[Jdb.todos.insertOne({"text":"Increase the number of tools in my toolbelt", "done [82G[3G[Jdb.todos.insertOne({"text":"Increase the number of tools in my toolbelt", "done" [83G[3G[Jdb.todos.insertOne({"text":"Increase the number of tools in my toolbelt", "done": [84G[3G[Jdb.todos.insertOne({"text":"Increase the number of tools in my toolbelt", "done":f [85G[3G[Jdb.todos.insertOne({"text":"Increase the number of tools in my toolbelt", "done":fa [86G[3G[Jdb.todos.insertOne({"text":"Increase the number of tools in my toolbelt", "done":fal [87G[3G[Jdb.todos.insertOne({"text":"Increase the number of tools in my toolbelt", "done":fals [88G[3G[Jdb.todos.insertOne({"text":"Increase the number of tools in my toolbelt", "done":false [89G[3G[Jdb.todos.insertOne({"text":"Increase the number of tools in my toolbelt", "done":false} [90G[3G[Jdb.todos.insertOne({"text":"Increase the number of tools in my toolbelt", "done":false}) [91G[3G[Jdb.todos.insertOne({"text":"Increase the number of tools in my toolbelt", "done":false}) [92G
+{
+	"acknowledged" : true,
+	"insertedId" : ObjectId("62f3a911a94528389af4afbd")
+}
+> db.todos.find({})[3G[Jdb.todos.find({})[20G
+{ "_id" : ObjectId("62f391499f9636911c550fa6"), "text" : "Write code......", "done" : true }
+{ "_id" : ObjectId("62f391499f9636911c550fa7"), "text" : "Learn about containers", "done" : false }
+{ "_id" : ObjectId("62f3a911a94528389af4afbd"), "text" : "Increase the number of tools in my toolbelt", "done" : false }
+> exit[3G[Jexit[7G
+bye
+root@ae3bcfd82ac0:/# exit
+exit
+]0;jonijaas@DESKTOP-OK8AK7L: /mnt/c/FullStack/part12-containers-applications/todo-app/todo-backend[01;32mjonijaas@DESKTOP-OK8AK7L[00m:[01;34m/mnt/c/FullStack/part12-containers-applications/todo-app/todo-backend[00m$ exit
+exit
+
+Script done on 2022-08-10 15:49:01+03:00 [COMMAND_EXIT_CODE="0"]
