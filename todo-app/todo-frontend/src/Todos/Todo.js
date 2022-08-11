@@ -6,7 +6,7 @@ const Todo = ({ todo, completeT, deleteT }) => {
     <>
       <span>This todo is done</span>
       <span>
-        <button onClick={deleteT(todo)}> Selete </button>
+        <button onClick={deleteT(todo)}> Delete </button>
       </span>
     </>
   )
