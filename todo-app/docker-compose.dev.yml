@@ -13,6 +13,7 @@ services:
     container_name: todo-frontend-dev
     environment:
       - REACT_APP_BACKEND_URL=/api/
+
   mongo:
     image: mongo
     ports:
@@ -25,6 +26,7 @@ services:
       - ./todo-backend/mongo/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js
       - mongo_data:/data/db
     container_name: mongo
+
   redis:
     image: redis
     ports:
@@ -33,6 +35,7 @@ services:
     volumes:
       - redis_data:/data
     container_name: redis
+
   server:
     image: todo-backend-dev
     build:
@@ -46,6 +49,7 @@ services:
       - REDIS_URL=redis://redis:6379
       - MONGO_URL=mongodb://the_username:the_password@mongo:27017/the_database
     container_name: todo-backend-dev
+    
   nginx:
     image: nginx:1.20.1
     volumes:
