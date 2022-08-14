@@ -1,5 +1,5 @@
-# Full Stack Open part12
-Full Stack Open part12 submission repository
+# Full Stack Open Part 12 - Containers
+Full Stack Open part12 submission repository.
 
 https://fullstackopen.com/en/part12
 
