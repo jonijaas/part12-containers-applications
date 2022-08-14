@@ -1,6 +1,11 @@
-<h1>Tehtävät osa3:</h2>
-<p>3.1 - 3.22</p>
-<p>Puhelinluettelon full-stack versio, sisältäen buildin frontendistä ja backendin.<p>
-<p>Tyylivirheet korjattu ESLintin avustuksella.</p>
+#Phonebook - backend
 
-<p>Linkki: <link>https://evening-inlet-62782.herokuapp.com/</link> </p>
+Install dependencies with `npm install`
+
+Run with `npm start`
+
+Or in development mode with `npm run dev`
+
+# MongoDB
+
+The application requires MongoDB database. Pass connection url with env `MONGODB_URI`, for example using .env file.
